@@ -10,16 +10,15 @@ import UIKit
 
 class CartTableViewController: UITableViewController {
     
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var totalLabel: UILabel!
+    
     var ordersInCart: [Order]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        tableView.tableHeaderView = headerView
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -34,6 +33,8 @@ class CartTableViewController: UITableViewController {
         let order = Order()
         order.product = product
         ordersInCart = [order]
+        
+        updateTotal()
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,6 +57,19 @@ class CartTableViewController: UITableViewController {
         if editingStyle == .Delete {
             ordersInCart?.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            updateTotal()
+        }
+    }
+    
+    func updateTotal() -> Void {
+        if let orders = ordersInCart {
+            var total: Double = 0.0
+            for order in orders {
+                if let price = order.product?.price {
+                    total = total + price
+                }
+            }
+            totalLabel.text = String(total)
         }
     }
 
