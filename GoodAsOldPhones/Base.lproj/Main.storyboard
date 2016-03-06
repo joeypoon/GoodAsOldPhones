@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="81T-bi-QPL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="JM2-pq-mrd">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -47,7 +47,7 @@
             </objects>
             <point key="canvasLocation" x="1563.5" y="361.5"/>
         </scene>
-        <!--Contact View Controller-->
+        <!--About-->
         <scene sceneID="8bl-Bb-27q">
             <objects>
                 <viewController id="6AN-Oh-SUT" customClass="ContactViewController" customModule="GoodAsOldPhones" customModuleProvider="target" sceneMemberID="viewController">
@@ -60,6 +60,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="About" image="icon-tabbar-contact" id="813-KT-f6b"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="scrollView" destination="xoH-md-2ub" id="2xK-t9-OOS"/>
@@ -170,10 +171,11 @@
             </objects>
             <point key="canvasLocation" x="1141.5" y="361.5"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Store-->
         <scene sceneID="S5H-xW-YBb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="81T-bi-QPL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Store" image="icon-tabbar-store" id="TR1-Mi-sKu"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LeD-YW-kux">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -188,6 +190,55 @@
             </objects>
             <point key="canvasLocation" x="609" y="361"/>
         </scene>
+        <!--Cart-->
+        <scene sceneID="oXH-CB-Hjs">
+            <objects>
+                <tableViewController id="3aM-g0-Skv" customClass="CartTableViewController" customModule="GoodAsOldPhones" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="BKZ-Aa-fud">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartCell" id="zXC-5U-eff">
+                                <rect key="frame" x="0.0" y="49.5" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zXC-5U-eff" id="pTd-dN-bF8">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3aM-g0-Skv" id="uhn-Jd-HPd"/>
+                            <outlet property="delegate" destination="3aM-g0-Skv" id="Tr9-zf-CjD"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Cart" image="icon-tabbar-cart" id="3dP-Dd-1Ni"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UhY-SZ-QDR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="613" y="1141"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="E68-dc-erC">
+            <objects>
+                <tabBarController id="JM2-pq-mrd" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="xMK-EK-Hug">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="81T-bi-QPL" kind="relationship" relationship="viewControllers" id="vdI-zc-EVc"/>
+                        <segue destination="6AN-Oh-SUT" kind="relationship" relationship="viewControllers" id="lCQ-nE-zi9"/>
+                        <segue destination="3aM-g0-Skv" kind="relationship" relationship="viewControllers" id="1Vk-xa-drh"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xnE-90-P9v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24" y="725"/>
+        </scene>
     </scenes>
     <resources>
         <image name="button-addtocart" width="158" height="41"/>
@@ -195,5 +246,8 @@
         <image name="icon-about-email" width="34" height="34"/>
         <image name="icon-about-phone" width="34" height="34"/>
         <image name="icon-about-website" width="34" height="34"/>
+        <image name="icon-tabbar-cart" width="24" height="19"/>
+        <image name="icon-tabbar-contact" width="29" height="19"/>
+        <image name="icon-tabbar-store" width="34" height="19"/>
     </resources>
 </document>
