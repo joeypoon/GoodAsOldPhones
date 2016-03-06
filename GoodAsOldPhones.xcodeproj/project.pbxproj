@@ -14,6 +14,7 @@
 		D33D69261C8A916F00344E92 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33D69251C8A916F00344E92 /* ProductViewController.swift */; };
 		D36165E61C8A96FF00ADD1C7 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36165E51C8A96FF00ADD1C7 /* ContactViewController.swift */; };
 		D36165E81C8A9F4D00ADD1C7 /* ProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36165E71C8A9F4D00ADD1C7 /* ProductsTableViewController.swift */; };
+		D36165EA1C8CC47100ADD1C7 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36165E91C8CC47100ADD1C7 /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		D33D69251C8A916F00344E92 /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		D36165E51C8A96FF00ADD1C7 /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		D36165E71C8A9F4D00ADD1C7 /* ProductsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsTableViewController.swift; sourceTree = "<group>"; };
+		D36165E91C8CC47100ADD1C7 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				D33D69131C8A8BE300344E92 /* AppDelegate.swift */,
 				D33D69171C8A8BE300344E92 /* Main.storyboard */,
 				D36165E71C8A9F4D00ADD1C7 /* ProductsTableViewController.swift */,
+				D36165E91C8CC47100ADD1C7 /* Product.swift */,
 				D36165E51C8A96FF00ADD1C7 /* ContactViewController.swift */,
 				D33D691A1C8A8BE300344E92 /* Assets.xcassets */,
 				D33D691C1C8A8BE300344E92 /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 			files = (
 				D33D69261C8A916F00344E92 /* ProductViewController.swift in Sources */,
 				D36165E81C8A9F4D00ADD1C7 /* ProductsTableViewController.swift in Sources */,
+				D36165EA1C8CC47100ADD1C7 /* Product.swift in Sources */,
 				D33D69141C8A8BE300344E92 /* AppDelegate.swift in Sources */,
 				D36165E61C8A96FF00ADD1C7 /* ContactViewController.swift in Sources */,
 			);
