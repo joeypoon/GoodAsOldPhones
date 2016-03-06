@@ -32,7 +32,6 @@ class ProductsTableViewController: UITableViewController {
             cell.textLabel?.text = pName
         }
         
-        cell.textLabel?.text = "Hello friend."
         cell.imageView?.image = UIImage(named: "image-cell1")
         
         return cell
@@ -41,7 +40,12 @@ class ProductsTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowProduct" {
             let productVC = segue.destinationViewController as? ProductViewController
-            productVC?.productName = "Really old phone"
+            
+            guard let cell = sender as? UITableViewCell,
+                  let indexPath = tableView.indexPathForCell(cell) else {
+                return
+            }
+            productVC?.productName = productNames?[indexPath.row]
         }
     }
 
